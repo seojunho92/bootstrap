@@ -1,0 +1,149 @@
+<head>
+<title></title>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>
+<link rel='stylesheet' href='http://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'/>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+    #hr {
+        font-family: 'Nanum Pen Script', cursive;
+    }
+</style>
+</head>
+<div class='container'>
+    <div class='row'>
+        <div class='col'>
+            <header class='jumbotron p-2'>
+                <nav class='navbar navbar-expand-sm navbar-light flexed-top'>
+                    <h1 class='d-sm-none' id='hr'>HR프로그램</h1>
+                    <button class='navbar-toggler' type='button' data-toggle='collapse'
+                        data-target='#menu'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='menu'>
+                        <ul class='navbar-nav mr-auto'>
+                            <li class='nav-item active'>
+                                <a class='nav-link text-nowrap' href='#'>학생관리</a>
+                            </li>
+                            <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#'
+                                    data-toggle='dropdown'>수강목록</a>
+                                <div class='dropdown-menu'>
+                                    <a class='dropdown-item' href='#'>JAVA</a>
+                                    <a class='dropdown-item' href='#'>SQL</a>
+                                    <div class='dropdown-divider'></div>
+                                    <a class='dropdown-item' href='#'>BOOTSTRAP</a>
+                                </div>    
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link text-nowrap' href='#'>강사소개</a>
+                            </li>
+                        </ul>
+    
+                        <form class='form-inline my-2 my-lg-0'>
+                            <input type='search' class='form-control mr-sm-2' placleholder='검색어'/>
+                            <button type='submit' class='btn btn-outline-success my-2 my-sm-0'>검색</button>
+                        </form>
+                    </div> 
+                </nav>
+                
+            </header>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <form>
+                <div class='row mb-3'>
+                    <div class='col-2'>
+                        <input type='text' class='form-control' placeholder='수강생이름'/>
+                    </div>
+                    <div class='col-4'>
+                        <input type='date' class='form-control'/>
+                    </div>
+                    <div class='col'>
+                        <nav class='d-flex'>
+                            <button type='button' class='btn btn-success flex-fill mr-1'>
+                                <i class='fas fa-plus'></i><span class='label d-none d-sm-inline'>추가</span>
+                            </button>
+                            <button type='button' class='btn btn-info flex-fill mr-1'>
+                                <i class='fas fa-edit'></i><span class='label d-none d-sm-inline'>수정</span>
+                            </button>
+                            <button type='button' class='btn btn-warning flex-fill'
+                                data-toggle='modal' data-target='#delLaborerModal'>
+                                <i class='fas fa-trash-alt'></i><span class='label d-none d-sm-inline'>삭제</span>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col'>
+                        <table class='table'>
+                            <thead><tr><th></th><th>ID</th><th>이름</th><th>등록일</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type='radio' name='laborer'/></td>
+                                    <td>12</td>
+                                    <td>최한석</td>
+                                    <td>2025-05-15</td>
+                                </tr>
+                                <tr>
+                                    <td><input type='radio' name='laborer'/></td>
+                                    <td>13</td>
+                                    <td>한아름</td>
+                                    <td>2025-07-17</td>
+                                </tr>
+                                <tr>
+                                    <td><input type='radio' name='laborer'/></td>
+                                    <td>14</td>
+                                    <td>양승일</td>
+                                    <td>2025-09-19</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan='4'>
+                                        <ul class='pagination justify-content-center'>
+                                            <li class='page-item disabled'>
+                                                <a class='page-link' href='#' tabindex='-1'><span>&laquo;</span></a>
+                                            </li>
+                                            <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                                            <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                                            <li class='page-item'>
+                                                <a class='page-link' href='#'><span>&raquo;</span></a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class='modal fade' tabindex='-1' id='delLaborerModal'>
+    <div class='modal-dialog'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <button type='button' class='close' data-dismiss='modal'>
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class='modal-body'>
+                <p>노동자를 삭제하시겠습니까?</p>
+            </div>
+            <div class='modal-footer'>
+                <button type='button' class='btn btn-secondary' data-dismiss='modal'>아니오</button>
+                <button type='button' class='btn btn-primary'>예</button>
+            </div>
+        </div>
+    </div>
+</div>
